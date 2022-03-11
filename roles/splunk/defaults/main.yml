@@ -1,0 +1,12 @@
+credentials:
+  username: admin
+  password: o!SUFz3Vbg5
+
+forwarder_unit_path: /etc/systemd/system
+forwarder_unit_name: opt-splunkforwarder.mount
+
+forwarder_deployment_server: siemdeploy24i02.group.s7:8089
+
+package_mgr_tasks:
+  yum: rpm.yml
+  apt: deb.yml

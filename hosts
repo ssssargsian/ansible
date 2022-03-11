@@ -1,0 +1,375 @@
+# This is the default ansible 'hosts' file.
+#
+# It should live in /etc/ansible/hosts
+#
+
+[servers]
+monqpromet13p01  ansible_ssh_host=172.17.48.238 ansible_user=root ansible_ssh_pass=J@ke28fLnn
+monqelk13p01     ansible_ssh_host=172.17.48.239 ansible_user=root ansible_ssh_pass=J@ke28fLnn
+monqstore13p01   ansible_ssh_host=172.17.48.224 ansible_user=root ansible_ssh_pass=J@ke28fLnn
+monqft13p01      ansible_ssh_host=172.17.48.226 ansible_user=root ansible_ssh_pass=J@ke28fLnn
+monqdnode13p03   ansible_ssh_host=172.17.48.223 ansible_user=root ansible_ssh_pass=J@ke28fLnn
+monqdnode13p02   ansible_ssh_host=172.17.48.222 ansible_user=root ansible_ssh_pass=J@ke28fLnn
+monqdnode13p01   ansible_ssh_host=172.17.48.221 ansible_user=root ansible_ssh_pass=J@ke28fLnn
+monqfthead13p01  ansible_ssh_host=172.17.48.225 ansible_user=root ansible_ssh_pass=J@ke28fLnn
+monqdhead13p02   ansible_ssh_host=172.17.48.220 ansible_user=root ansible_ssh_pass=J@ke28fLnn
+monqdhead13p01   ansible_ssh_host=172.17.48.219 ansible_user=root ansible_ssh_pass=J@ke28fLnn
+monqdb13p02      ansible_ssh_host=172.17.48.218 ansible_user=root ansible_ssh_pass=J@ke28fLnn
+monqdb13p01      ansible_ssh_host=172.17.48.217 ansible_user=root ansible_ssh_pass=J@ke28fLnn
+monqprobes13t01  ansible_ssh_host=monqprobes13t01  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+[serv1]
+ssptest21t01 ansible_ssh_host=ssptest21t01 ansible_user=root ansible_ssh_pass=J@ke28fLnn
+#netline21t02 ansible_ssh_host=netline21t02 ansible_user=root ansible_ssh_pass=J@ke28fLnn
+[jcpnfs]
+jcpnfs24p01.group.s7
+jcpapp24p01
+jcpinfra24p01
+jcpopt24p01
+
+
+[docker]
+
+#docker24t01  ansible_host=172.20.11.63  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+#docker24t02
+#jirastage24h01
+#s7jscsupd24p01 ansible_host=172.20.98.25  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+#pgdb13t50  ansible_host=pgdb13t50  ansible_user=root ansible_ssh_pass=pheiphe5O
+
+
+
+
+
+
+
+
+amksac24d01 ansible_host=amksac24d01  ansible_user=root ansible_ssh_pass=pheiphe5O
+amksac24d02 ansible_host=amksac24d02  ansible_user=root ansible_ssh_pass=pheiphe5O
+amksak24d01  ansible_host=amksak24d01  ansible_user=root ansible_ssh_pass=pheiphe5O
+amksak24d02 ansible_host=amksak24d02  ansible_user=root ansible_ssh_pass=pheiphe5O
+amksak24d03 ansible_host=amksak24d03  ansible_user=root ansible_ssh_pass=pheiphe5O
+amksapp24d01 ansible_host=amksapp24d01  ansible_user=root ansible_ssh_pass=pheiphe5O
+amksapp24d02 ansible_host=amksapp24d02  ansible_user=root ansible_ssh_pass=pheiphe5O
+amksapp24d03 ansible_host=amksapp24d03  ansible_user=root ansible_ssh_pass=pheiphe5O
+amksapp24d04 ansible_host=amksapp24d04  ansible_user=root ansible_ssh_pass=pheiphe5O
+amksapp24d05 ansible_host=amksapp24d05  ansible_user=root ansible_ssh_pass=pheiphe5O
+amksdpp24d01 ansible_host=amksdpp24d01  ansible_user=root ansible_ssh_pass=pheiphe5O
+amksdpp24d02 ansible_host=amksdpp24d02  ansible_user=root ansible_ssh_pass=pheiphe5O
+amkses24d02 ansible_host=amkses24d02  ansible_user=root ansible_ssh_pass=pheiphe5O
+amksocr24d01 ansible_host=amksocr24d01 ansible_user=root ansible_ssh_pass=pheiphe5O
+amkszkp24d01 ansible_host=amkszkp24d01  ansible_user=root ansible_ssh_pass=pheiphe5O
+amkszkp24d02 ansible_host=amkszkp24d02  ansible_user=root ansible_ssh_pass=pheiphe5O
+amkszkp24d03 ansible_host=amkszkp24d03  ansible_user=root ansible_ssh_pass=pheiphe5O
+amksac24d03 ansible_host=amksac24d03  ansible_user=root ansible_ssh_pass=pheiphe5O
+amkses24d01 ansible_host=amkses24d01  ansible_user=root ansible_ssh_pass=pheiphe5O
+
+#netline21t02
+
+#kafkacon11t01 ansible_ssh_host=kafkacon11t01   ansible_user=root ansible_ssh_pass=Auw63zag
+
+[sc]
+scm-master13p01 ansible_host=scm-master13p01  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+scm-master21p02 ansible_host=scm-master21p02  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+
+[db]
+
+pgdb13t65
+pgdb24p42
+pgdb24p57
+pgdb24t34
+oradb24p58
+oradb24t55
+pgdb21p01
+vtcdb13p08
+vtcdb13p09
+vtcdb13p10
+pgdb24t70
+amospgdb24t02
+oradb21p18
+vdbs16
+esdb24p02
+esdb24p03
+esdb24p04
+scydb24p04
+scydb24p05
+scydb24p06
+pgbackup24i02
+pgdb24p64
+pgdb24t27
+pgdb13p46
+pgdb13p49
+pgdb13t37
+pgdb13t38
+pgdb13p36
+pgdb13t51
+oradb11p13
+esdb24p01
+mongodb24p07
+mongodb24p08
+mongodb24p09
+mongodb24t01
+mongodb24t02
+mongodb24t03
+mongodb24uat04
+mongodb24uat05
+mongodb24uat06
+pgdb13p44
+pgdb13t39
+pgdb13p68
+pgdb31p72
+oradb11p09
+oradb11t40
+pgdb21t06
+confl11p01
+oradb11t26
+pgdb13p43
+pgdb13t32
+oradb13t66
+
+[serv2]
+
+
+
+
+
+#wso2is11t02 ansible_host=wso2is11t02  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+#wso2is21i03 ansible_host=wso2is21i03  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+#pgbackup24i01 ansible_host=pgbackup24i01  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+#anav24p05	 ansible_host=anav24p05  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+anav24p01	ansible_host=anav24p01  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+#anav24p02	ansible_host=anav24p02  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+#anav24p03	ansible_host=anav24p03  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+#anav24p04 ansible_host=anav24p04  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+[host]
+docker24i01
+docker24t04
+confl13t03
+pgbackup24i01
+wso2is11t02
+wso2is21i03
+aimsbox24p02
+jasper21p05.group.s7
+aimsbox13r03
+amos13r01
+amos24p14
+amos24p03
+amos24t01
+amos24t02
+amos24t06
+melon21i01.group.s7
+acs24h03
+ccp24p01
+ccp24p02
+s7jsc24h04
+pydocker21t01.group.s7
+hppadm24h01
+s7jsc24h02
+s7jsc24h09
+pgbackup24i03
+kafka13p09
+kafka13p10
+kafka13p11
+kafka13t12
+kafka13t13
+kafka13t14
+kube31i01
+kube31i02
+kube31i03
+kube31i04
+kube31i05
+kube31i06
+kube31i07
+nettest31i01
+rendall24t02
+nexus24p01
+gitlab11i01.group.s7
+gitlab11i02.group.s7
+aircraftel21p01.group.s7
+nbmedia24i06
+s7ftp.oel
+nbrtcom.media 
+fsftp11i01
+fsftp21i01
+nbmedia24i01
+stream11p01
+r7scaner13h02
+lbesp24p01
+lbesp24p02
+appsec24u01.group.s7
+icn1siem24i05
+icn1siem24t11.group.s7
+icn2siem24i06
+icn2siem24t12.group.s7
+icn3siem24i07
+icn4siem24i13
+icn5siem24i08.group.s7
+icn6siem24i08
+icn7siem24i09
+log24p02.group.s7
+nbmedia24i05.group.s7
+s7jscsiem24p01
+sh1uba24i10.group.s7
+sh2uba24i11
+sh3uba24i12
+siemdeploy24i02
+siemdeploy24t08.group.s7
+siemhead24i01
+siemhead24t09.group.s7
+siemhf24i03
+siemhf24t04.group.s7
+siemmaster24i04
+siemmaster24t10.group.s7
+ngfwfmg13p01
+ise-test2
+lincheck24t01
+s7jscarni24p01
+dnsrec24i02
+dnsauth13i01
+dnsauth31i01
+dnsdist13i01
+dnsdist13i02
+dnsdist13i03
+dnsdist31i01
+dnsdist31i02
+dnsdist31i03
+dnsdot13i01
+dnsdot31i01
+dnsrec13i01
+dnsrec13i02
+dnsrec31i01
+drdns13t03
+drrec31t01
+intrachle24p01
+docker11i01.group.s7
+docker11i02.group.s7
+docker11i03.group.s7
+intra11p01.group.s7
+intra11p03.group.s7
+intra11t02.group.s7
+jira11p01.group.s7
+jira21t03
+jira24p04
+kafkacon11t01
+artifact11p01.group.s7
+jboss11t12.group.s7
+ldap01
+tgrouter11p01.group.s7
+clickhouse11p01
+mailkas24i02
+mx21i01
+nbmedia24i03
+nbmedia24i04
+fortimail13i02
+fortimail24i01
+mta24i04
+netline21p01.group.s7
+netline21t02.group.s7
+oradb21p47.group.s7
+oradb21t28.group.s7
+vnetline-app
+clickhouse13p02	
+oracat11i01.group.s7	
+oracat21i01.group.s7	
+oebsapp13t01
+oebsapp13t03		
+linuxoebs11p01
+
+
+
+
+docker24i01	
+docker24t04	
+confl13t03
+oradb11t14.group.s7
+vdbs27.group.s7
+s7jscamadt11p01.group.s7	
+s7jscamadt11p02.group.s7	
+scydb13p04	
+scydb13p05	
+scydb13p06	
+s7jscamadt21p01.group.s7	
+s7jscamadt21p02.group.s7	
+scyamad13p01	
+scyamad13p02		
+scylog24p01	
+scymon24p0
+
+
+
+
+
+
+
+#ansible_host=monqprobes13t01  ansible_user=root ansible_ssh_private_key_file=/root/.ssh/id_rsa
+icn2siem24t ansible_host=icn2siem24t12  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+icn1siem24t11 ansible_host=icn1siem24t11  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+siemmaster24t10 ansible_host=siemmaster24t10  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+icn4siem24i13 ansible_host=icn4siem24i13  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+
+
+#intra11t02 ansible_host=intra11t02  ansible_user=root ansible_ssh_private_key_file=/root/.ssh/id_rsa
+docker11i02 ansible_host=docker11i02  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+#gitlab11i01 ansible_host=gitlab11i01  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+docker11i03 ansible_host=docker11i03  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+wso2is21i03 ansible_host=wso2is21i03  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+scm-master13p01 ansible_host=scm-master13p01  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+scm-master21p02 ansible_host=scm-master21p02  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+avdup8v24i02 ansible_host=avdup8v24i02  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+sh1uba24i10 ansible_host=sh1uba24i10  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+sh2uba24i11 ansible_host=sh2uba24i11  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+sh3uba24i12 ansible_host=sh3uba24i12  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+vsm-rmq24p03 ansible_host=vsm-rmq24p03  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+vsm-rmq24p02 ansible_host=vsm-rmq24p02  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+vsm-rmq24p01 ansible_host=vsm-rmq24p01  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+vsm-elk24p03 ansible_host=vsm-elk24p03  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+luna-s3-24p01 ansible_host=luna-s3-24p01  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+vsm-elk24t02 ansible_host=vsm-elk24t02  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+ssanginx27p01 ansible_host=ssanginx27p01  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+ssanginx27p02 ansible_host=ssanginx27p02  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+imsfs27p02 ansible_host=imsfs27p02  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+imsfs27p01 ansible_host=imsfs27p01  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+scyamad13p02 ansible_host=scyamad13p02  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+scyamad13p01 ansible_host=scyamad13p01  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+lincheck24t01 ansible_host=lincheck24t01  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+scymon24p01 ansible_host=scymon24p01  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+scylog24p01 ansible_host=scylog24p01  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+boast24h01 ansible_host=boast24h01  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+webmail21i02 ansible_host=webmail21i02  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+nbmedia24i08 ansible_host=nbmedia24i08 ansible_user=root ansible_ssh_pass=J@ke28fLnn
+s7jscamadt21p01 ansible_host=s7jscamadt21p01  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+s7jscamadt21p02 ansible_host=s7jscamadt21p02  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+ssbdel24t01 ansible_host=ssbdel24t01  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+nbmaster21i01 ansible_host=nbmaster21i01  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+icn5siem24i08 ansible_host=icn5siem24i08  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+bp11t01 ansible_host=bp11t01  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+melon21i01 ansible_host=melon21i01  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+nbmedia21i1 ansible_host=172.20.131.8  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+siemhf24t04 ansible_host=siemhf24t04  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+siemdeploy24t ansible_host=siemdeploy24t08  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+anav24p04 ansible_host=anav24p04  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+anav24p03 ansible_host=anav24p03  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+anav24p02 ansible_host=anav24p02  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+anav24p01 ansible_host=anav24p01  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+nginx24i03 ansible_host=nginx24i03  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+nbmedia24i05 ansible_host=nbmedia24i05  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+lbhint11i01 ansible_host=lbhint11i01  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+lbhext11i02 ansible_host=lbhext11i02  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+lbhext11i01 ansible_host=lbhext11i01  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+lbhext21i01 ansible_host=lbhext21i01  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+lbhext21i02 ansible_host=lbhext21i02  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+netline21t02 ansible_host=netline21t02  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+amos24t01 ansible_host=amos24t01  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+httpd21p02 ansible_host=httpd21p02  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+sso21i04 ansible_host=sso21i04  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+netline21p01 ansible_host=netline21p01  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+sso21i05 ansible_host=sso21i05  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+proxy21i01 ansible_host=proxy21i01  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+sso21i02 ansible_host=sso21i02  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+deploy11i01 ansible_host=deploy11i01  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+#ansible_host=monqprobes13t01  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+#ansible_host=monqprobes13t01  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+#ansible_host=monqprobes13t01  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+#ansible_host=monqprobes13t01  ansible_user=root ansible_ssh_pass=J@ke28fLnn
+
+
+
+

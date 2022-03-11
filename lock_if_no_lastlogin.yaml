@@ -1,0 +1,57 @@
+---
+ - hosts: serv1
+   gather_facts: no
+   vars: 
+    exluded_users: 
+      - reboot
+   tasks:
+    - name: Check lastlogin users
+      register: last_log_uniq_entires
+      raw: find /var/log/ -name "wtmp*" -exec sh -c "last -w -F -f {} | grep 2022 | cut -d ' ' -f1" \; |sort|uniq|grep -E '^[-a-z0-9\.]{0,30}$'
+    - name: Check all login users
+      register: any_log_uniq_entires
+      raw: find /var/log/ -name "wtmp*" -exec sh -c "last -w -F -f {} | cut -d ' ' -f1" \; |sort|uniq|grep -v -E 'wtmp*|$^'
+    - name: create ssh_login_users group
+      group: 
+        name: ssh_login_users
+    - name: "Add active ssh users to group ssh_login_users"
+      user:
+        name: "{{ item }}"
+        groups: ssh_login_users
+        append: yes
+      with_items: 
+        - "{{ last_log_uniq_entires.stdout_lines }}"
+      when:
+       - item != "" # if not empty line
+       - '"wtmp" not in item' # exclude for log file names (wtmp, wtmp-20220303, ...)
+       - 'item not in exluded_users'
+    # - name: "Save user changes for {{ inventory_hostname }}"
+    #   copy:
+    #     dest: "{{ inventory_hostname }}.txt"
+    #     content: "{{ last_log_uniq_entires }} \n {{ any_log_uniq_entires }}"
+    #   delegate_to: localhost
+    - name: Write ssh banner message
+      register: sshd_config
+      copy:
+        dest: /etc/ssh/restriction-banner
+        content: |
+          Your access will be restricted, for details: 
+            https://confluence2.s7.aero/pages/viewpage.action?pageId=100044763
+    - name: Restrict ssh login for ssh_login_users only
+      register: sshd_config
+      blockinfile:
+        dest: /etc/ssh/sshd_config
+        backup: yes
+        content: |
+            Match Group !ssh_login_users,!olsudo,*
+                    X11Forwarding no
+                    AllowTcpForwarding no
+                    PermitTTY no
+                    Banner /etc/ssh/restriction-banner
+                    ForceCommand internal-sftp
+    - name: Reload sshd service
+      service:
+        name: "sshd"
+        state: reloaded
+        enabled: yes
+      when: sshd_config.changed

@@ -1,0 +1,62 @@
+---
+- name: Install packages
+  include_tasks: "{{ package_mgr_tasks[ansible_pkg_mgr] }}"
+
+- name: Create splunk system user
+  user:
+    name: splunk
+    shell: /bin/false
+    append: yes
+
+- name: Change ownership
+  file:
+    path: /opt/splunkforwarder
+    recurse: yes
+    owner: splunk
+    group: splunk
+
+- name: Edit user-seed.conf
+  template:
+    src: user-seed.conf.j2
+    dest: /opt/splunkforwarder/etc/system/local/user-seed.conf
+
+- name: First launch
+  command: /opt/splunkforwarder/bin/splunk start --accept-license --answer-yes --auto-ports
+  become: True
+  become_user: splunk
+  become_flags: '-H'
+  when: install.changed
+
+- name: Deployment server set
+  command: "/opt/splunkforwarder/bin/splunk set deploy-poll {{ forwarder_deployment_server }} -auth {{ credentials.username }}:{{ credentials.password }}"
+  become: True
+  become_user: splunk
+  become_flags: '-H'
+
+- name: Splunkforwarder restart
+  command: "/opt/splunkforwarder/bin/splunk restart"
+  become: True
+  become_user: splunk
+  become_flags: '-H'
+
+- name: Enable splunkforwarder start on boot
+  command: "/opt/splunkforwarder/bin/splunk enable boot-start -user splunk"
+
+- name: Sets default ACL for splunk on log folders
+  ansible.posix.acl:
+    path: "{{ item }}"
+    entity: splunk
+    etype: user
+    permissions: rx
+    default: yes
+    state: present
+  loop: "{{ siem_log_folders }}"
+
+- name: Grant user splunk read access to current log files
+  ansible.posix.acl:
+    path: "{{ item }}"
+    entity: splunk
+    etype: user
+    permissions: r
+    state: present
+  loop: "{{ siem_log_files[ansible_pkg_mgr] }}"

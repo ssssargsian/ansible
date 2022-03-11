@@ -1,0 +1,48 @@
+---
+- name: Install auditd
+  yum:
+    name: "{{ packages }}"
+  vars:
+    packages:
+    - audit
+    - audit-libs
+  register: install
+  when: ansible_pkg_mgr == "yum"
+
+- name: Install auditd
+  apt:
+    name: "{{ packages }}"
+  vars:
+    packages:
+    - auditd
+    - audispd-plugins
+  register: install
+  when: ansible_pkg_mgr == "apt"
+  ignore_errors: yes
+
+  
+- name: Edit rules
+  template:
+    src: audit.rules.j2
+    dest: /etc/audit/rules.d/audit.rules
+  register: audit_rules
+
+- name: Edit log group for siem access
+  lineinfile:
+    path: /etc/audit/auditd.conf
+    regexp: '^log_group'
+    line: "log_group = {{ log_group }}"
+  register: log_group
+
+- name: Check and start auditd
+  service:
+    name: auditd
+    use: service # use service instead systemctl (auditd specific)
+    state: started
+
+- name: Restart audit service for apply file changes
+  service:
+    name: auditd
+    use: service # use service instead systemctl (auditd specific)
+    state: restarted
+  when: log_group.changed or audit_rules.changed

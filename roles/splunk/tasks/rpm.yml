@@ -1,0 +1,15 @@
+---
+- name: Install SIEM Repo
+  template:
+    src: esp-siem.repo.j2
+    dest: /etc/yum.repos.d/esp-siem.repo
+
+- name: Install Splunk PGP
+  rpm_key:
+    state: present
+    key: https://nexus.s7.aero/repository/esp-data/pgp/b3cd4420-splunk-pgp.key
+   
+- name: Install Splunk Forwarder
+  yum:
+    name: splunkforwarder
+  register: install

@@ -1,0 +1,28 @@
+---
+- name: Setup Splunk Universal Forwarder
+  hosts: "linu"
+  gather_facts: True
+  become: yes
+  roles:
+    - { role: splunk }
+  vars:
+    # Setup log files and directories for siem user access
+    siem_log_files:
+      yum:
+        - "/var/log/secure"
+        - "/var/log/messages"
+      apt:
+        - "/var/log/auth.log"
+        - "/var/log/syslog"
+      #- "/var/log/vault/vault_audit.log"
+    siem_log_folders:
+      - "/var/log/"
+      #- "/var/log/vault"
+- name: Setup auditd
+  hosts: "linu"
+  gather_facts: True
+  become: yes
+  vars:
+    log_group: splunk
+  roles:
+    - { role: auditd }
